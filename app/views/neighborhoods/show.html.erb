@@ -7,22 +7,29 @@
     <dl class="dl-horizontal">
       <dt>Name</dt>
       <dd><%= @neighborhood.name %></dd>
-
-      <dt>City</dt>
+ <dt>City</dt>
       <dd><%= @neighborhood.city %></dd>
+<dt>Venues</dt>
+<dd>
+    <%@neighborhood.venues.each do |venue| %>
+      <ul>
+       <%=venue.name %>
+       </ul>
+       <% end %>
+</dd>
 
-    </dl>
+   </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/neighborhoods" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/neighborhoods/<%= @neighborhood.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_neighborhood/<%= @neighborhood.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
+   <div class="btn-group btn-group-justified">
+    <a href="/neighborhoods" class="btn btn-primary">
+      Back
+    </a>
+    <a href="/neighborhoods/<%= @neighborhood.id %>/edit" class="btn btn-warning">
+      Edit
+    </a>
+    <a href="/delete_neighborhood/<%= @neighborhood.id %>" class="btn btn-danger" rel="nofollow">
+      Delete
+    </a>
   </div>
+</div>
 </div>
